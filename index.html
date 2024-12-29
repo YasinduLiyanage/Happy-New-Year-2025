@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy New Year 2025 My Love</title>
     <style>
-        /* Keep existing base styles */
+        /* Responsive base styles */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -22,29 +22,29 @@
             perspective: 1000px;
         }
 
-        /* Fixed rose styles */
+        /* Scalable rose styles */
         .rose {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 3vw;
+            height: 3vw;
             animation: roseFloat 10s linear infinite;
             opacity: 0;
         }
 
         .rose::before {
             content: '🌹';
-            font-size: 30px;
+            font-size: 3vw;
             position: absolute;
             width: 100%;
             height: 100%;
             text-align: center;
-            line-height: 30px;
+            line-height: 3vw;
         }
 
         .petal {
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 2vw;
+            height: 2vw;
             background: radial-gradient(circle at 30% 30%, #ff4081, #ff80ab);
             border-radius: 100% 0 100% 0;
             animation: petalFall 6s linear infinite;
@@ -79,10 +79,10 @@
             }
         }
 
-        /* Enhanced love message style */
+        /* Responsive love message */
         .love-message {
             position: absolute;
-            font-size: 2rem;
+            font-size: 2vw;
             color: #ff4081;
             opacity: 0;
             transform: scale(0);
@@ -90,7 +90,7 @@
             text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
             z-index: 100;
             background: rgba(255, 255, 255, 0.1);
-            padding: 10px 20px;
+            padding: 1vw 2vw;
             border-radius: 15px;
             backdrop-filter: blur(5px);
         }
@@ -110,14 +110,14 @@
             }
         }
 
-        /* Enhanced button style */
+        /* Responsive button style */
         .celebrate-btn {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 20px 40px;
-            font-size: 2rem;
+            padding: 1.5vw 3vw;
+            font-size: 1.5rem;
             background: linear-gradient(45deg, #ff4081, #ff80ab, #ff4081);
             background-size: 300% 300%;
             color: #fff;
@@ -138,7 +138,6 @@
             box-shadow: 0 6px 25px rgba(255, 64, 129, 0.8);
         }
 
-        /* Enhanced container style */
         .container {
             display: none;
             flex-direction: column;
@@ -147,20 +146,14 @@
             text-align: center;
             z-index: 100;
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            padding: 5vw;
             border-radius: 20px;
             backdrop-filter: blur(5px);
         }
 
-        /* Rest of the existing styles remain the same */
-        @keyframes backgroundChange {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
+        /* Responsive text styles */
         h1 {
-            font-size: 5rem;
+            font-size: 5vw;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             display: inline-block;
             animation: textFloat 3s ease-in-out infinite;
@@ -173,7 +166,7 @@
         }
 
         .subwish {
-            font-size: 2rem;
+            font-size: 2vw;
             color: #ffffff;
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             margin: 10px 0;
@@ -189,16 +182,36 @@
 
         @media (max-width: 768px) {
             h1 {
+                font-size: 4rem;
+            }
+            .subwish {
+                font-size: 1.2rem;
+            }
+            .celebrate-btn {
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
                 font-size: 3rem;
             }
             .subwish {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
             .celebrate-btn {
-                font-size: 1.5rem;
-                padding: 15px 30px;
+                font-size: 0.9rem;
+                padding: 0.8rem 1.5rem;
             }
         }
+
+        @keyframes backgroundChange {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
     </style>
 </head>
 <body>
@@ -230,8 +243,7 @@
             "😍",
             "❤️❤️",
             "💕",
-            "🥰",
-            
+            "🥰"
         ];
 
         function createRose() {
@@ -283,7 +295,7 @@
                     wishElement.className = 'subwish';
                     wishElement.textContent = wish;
                     subwishContainer.appendChild(wishElement);
-                    
+
                     setTimeout(() => {
                         wishElement.classList.add('typing');
                     }, 100);
