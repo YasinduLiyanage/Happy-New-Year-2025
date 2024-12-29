@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2025 My Love</title>
+    <style>
+        /* Keep existing base styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #ffecd2, #f6d365, #c6ffdd);
+            background-size: 400% 400%;
+            animation: backgroundChange 15s infinite;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        /* Fixed rose styles */
+        .rose {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            animation: roseFloat 10s linear infinite;
+            opacity: 0;
+        }
+
+        .rose::before {
+            content: '🌹';
+            font-size: 30px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .petal {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle at 30% 30%, #ff4081, #ff80ab);
+            border-radius: 100% 0 100% 0;
+            animation: petalFall 6s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes roseFloat {
+            0% {
+                transform: translate(0, 110vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--translateX), -10vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes petalFall {
+            0% {
+                transform: translate(0, -10%) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--translateX), 110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced love message style */
+        .love-message {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff4081;
+            opacity: 0;
+            transform: scale(0);
+            animation: messageAppear 2s forwards;
+            text-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes messageAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0) translateY(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1) translateY(-20px);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1) translateY(-40px);
+            }
+        }
+
+        /* Enhanced button style */
+        .celebrate-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 40px;
+            font-size: 2rem;
+            background: linear-gradient(45deg, #ff4081, #ff80ab, #ff4081);
+            background-size: 300% 300%;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            animation: btnMove 3s infinite, gradientShift 5s infinite;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 64, 129, 0.5);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 1000;
+        }
+
+        .celebrate-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 64, 129, 0.8);
+        }
+
+        /* Enhanced container style */
+        .container {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Rest of the existing styles remain the same */
+        @keyframes backgroundChange {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            animation: textFloat 3s ease-in-out infinite;
+            background: linear-gradient(45deg, #fff, #ff4081, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px rgba(255, 64, 129, 0.5));
+            margin-bottom: 20px;
+        }
+
+        .subwish {
+            font-size: 2rem;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .subwish.typing {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .subwish {
+                font-size: 1.5rem;
+            }
+            .celebrate-btn {
+                font-size: 1.5rem;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="celebrate-btn" onclick="startCelebration()">Click ME❤️</button>
+
+    <div class="container">
+        <h1>
+            <span class="typing" id="main-typing">Happy New Year 2025 Hiranyaa❤️!</span>
+        </h1>
+        <div id="subwish-container"></div>
+    </div>
+
+    <script>
+        const subwishes = [
+            "නව වසරේ ඔබේ සියලු බලාපොරොත්තු ඉටුවේවා!",
+            "සාමය, සෞභාග්‍යය, සතුට පිරි වසරක් වේවා!",
+            "ඔබේ ජීවිතයේ සෑම දිනක්ම සතුටින් පිරි දිනයක් වේවා!",
+            "❤️"
+        ];
+
+        const loveMessages = [
+            "I Love You ❤️",
+            "Forever Yours 💑",
+            "My Everything 💖",
+            "My Love 💝",
+            "Together Forever 💑",
+            "You're Amazing ✨",
+            "My Heart is Yours 💗",
+            "😍",
+            "❤️❤️",
+            "💕",
+            "🥰",
+            
+        ];
+
+        function createRose() {
+            const rose = document.createElement('div');
+            rose.className = 'rose';
+            rose.style.setProperty('--translateX', `${Math.random() * 200 - 100}px`);
+            rose.style.left = `${Math.random() * 100}%`;
+            document.body.appendChild(rose);
+            setTimeout(() => rose.remove(), 10000);
+        }
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.setProperty('--translateX', `${Math.random() * 200 - 100}px`);
+            petal.style.left = `${Math.random() * 100}%`;
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 6000);
+        }
+
+        function createLoveMessage() {
+            const message = document.createElement('div');
+            message.className = 'love-message';
+            message.textContent = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+            message.style.left = `${Math.random() * 80 + 10}%`;
+            message.style.top = `${Math.random() * 80 + 10}%`;
+            document.body.appendChild(message);
+            setTimeout(() => message.remove(), 2000);
+        }
+
+        function startCelebration() {
+            document.querySelector('.celebrate-btn').style.display = 'none';
+            document.querySelector('.container').style.display = 'flex';
+
+            // Start animations
+            setInterval(createRose, 1000);
+            setInterval(createPetal, 500);
+            setInterval(createLoveMessage, 2000);
+
+            // Show wishes
+            showSubwishes();
+        }
+
+        function showSubwishes() {
+            const subwishContainer = document.getElementById('subwish-container');
+            subwishes.forEach((wish, index) => {
+                setTimeout(() => {
+                    const wishElement = document.createElement('p');
+                    wishElement.className = 'subwish';
+                    wishElement.textContent = wish;
+                    subwishContainer.appendChild(wishElement);
+                    
+                    setTimeout(() => {
+                        wishElement.classList.add('typing');
+                    }, 100);
+                }, index * 3000);
+            });
+        }
+    </script>
+</body>
+</html>
